@@ -1,6 +1,6 @@
 import { QNInvalidEndpointUrl } from '../lib/errors/QNInvalidEnpointUrl.js';
 import { QNChainNotSupported } from '../lib/errors/QNChainNotSupported.js';
-import { arbitrum, arbitrumGoerli, avalanche, avalancheFuji, baseGoerli, bsc, bscTestnet, celo, fantom, gnosis, goerli, harmonyOne, mainnet, optimism, optimismGoerli, polygon, polygonMumbai, polygonZkEvm, polygonZkEvmTestnet, sepolia, holesky, baseSepolia } from 'viem/chains';
+import { arbitrum, arbitrumGoerli, avalanche, avalancheFuji, baseGoerli, bsc, bscTestnet, celo, fantom, gnosis, goerli, harmonyOne, mainnet, optimism, optimismGoerli, polygon, polygonMumbai, polygonZkEvm, polygonZkEvmTestnet, sepolia, holesky, baseSepolia, base } from 'viem/chains';
 
 const ETH_MAINNET_NETWORK = 'ethereum-mainnet';
 const qnChainToViemChain = {
@@ -27,7 +27,8 @@ const qnChainToViemChain = {
     'zkevm-testnet': polygonZkEvmTestnet,
     'ethereum-sepolia': sepolia,
     'ethereum-holesky': holesky,
-    'base-sepolia': baseSepolia
+    'base-sepolia': baseSepolia,
+    'base': base
 };
 function chainNameFromEndpoint(endpointUrl) {
     let hostnameParts;
