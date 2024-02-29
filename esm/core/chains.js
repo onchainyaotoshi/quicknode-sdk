@@ -28,7 +28,7 @@ const qnChainToViemChain = {
     'ethereum-sepolia': sepolia,
     'ethereum-holesky': holesky,
     'base-sepolia': baseSepolia,
-    'base': base
+    'base-mainnet': base
 };
 function chainNameFromEndpoint(endpointUrl) {
     let hostnameParts;
