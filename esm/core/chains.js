@@ -2,6 +2,23 @@ import { QNInvalidEndpointUrl } from '../lib/errors/QNInvalidEnpointUrl.js';
 import { QNChainNotSupported } from '../lib/errors/QNChainNotSupported.js';
 import { arbitrum, arbitrumGoerli, avalanche, avalancheFuji, baseGoerli, bsc, bscTestnet, celo, fantom, gnosis, goerli, harmonyOne, mainnet, optimism, optimismGoerli, polygon, polygonMumbai, polygonZkEvm, polygonZkEvmTestnet, sepolia, holesky, baseSepolia, base } from 'viem/chains';
 
+//quick fix, since i am migrate from replit to glitch that force me to downgrade nodejs version to 16.4.2 where not support .at
+if (!Array.prototype.at) {
+  Array.prototype.at = function(index) {
+      // Convert index to an integer, allowing for negative indices
+      index = Math.trunc(index) || 0;
+      
+      // When index is negative, count from the end of the array
+      if (index < 0) index += this.length;
+      
+      // Return undefined if index is out of bounds
+      if (index < 0 || index >= this.length) return undefined;
+      
+      // Return the element at the given index
+      return this[index];
+  };
+}
+
 const ETH_MAINNET_NETWORK = 'ethereum-mainnet';
 const qnChainToViemChain = {
     'arbitrum-mainnet': arbitrum,
